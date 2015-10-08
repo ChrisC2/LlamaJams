@@ -129,7 +129,7 @@ body {
   margin: 0 auto;
   height: 80px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 150px;
   background-color: transparent;
 }
 
@@ -203,7 +203,7 @@ body {
   font-size: 13px;
   color: #fff;
   border-width: 0px;
-  width: 100%;
+  width: 200px;
   height: 20px;
   border-radius: 50px;
   background-color: transparent;
@@ -215,13 +215,14 @@ body {
 
 /* soundcloud results is the div element that is rendered underneath the search */
 .soundcloud-results {
-  display: none;
+  align-content: center;
   width: 100%;
   position: absolute;
+  opacity:0.6;
+  color: white;
   background-color: #242424;
-  top: 145px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  top: 220px;
+  border-radius: 15px
 }
 
 /* created links for each item listed on soundcloud results to make them clickable */
