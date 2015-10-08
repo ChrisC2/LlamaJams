@@ -16,6 +16,7 @@ var SongEntry = React.createClass({
       var eachTitle = eachSong.title;
       // The next three lines attempt to parse the song title to store
       var separateTitleandArtist = eachTitle.indexOf('-')
+      console.log("songentry.js : separateTitleandArtist", separateTitleandArtist)
       var artist = eachTitle.slice(0, separateTitleandArtist)
       var song = eachTitle.slice(separateTitleandArtist + 2, eachTitle.length)
       // Pushes each song into the items array for rendering
@@ -147,7 +148,7 @@ var SongEntry = React.createClass({
     if(this.state.searchResults.length > 0) {
       this.setState({ searchResults: this.state.searchResults.slice(0) })
       this.forceUpdate();
-    } 
+    }
     SC.get('http://api.soundcloud.com/tracks/', { q: inputSearch, limit: 7 }, function(tracks) {
     // Display each song title and an option to add '+' to host playlist
       var obj = [];
@@ -160,8 +161,8 @@ var SongEntry = React.createClass({
           songUrl: eachUrl
         });
        }
-      this.setState({ 
-        searchResults: obj 
+      this.setState({
+        searchResults: obj
       })
    }.bind(this));
   },
@@ -179,7 +180,7 @@ var SongEntry = React.createClass({
       }
     } else {
       var display = {
-        display: 'none' 
+        display: 'none'
       }
     }
     return (

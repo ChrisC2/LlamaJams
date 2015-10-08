@@ -16,7 +16,7 @@ var Player = React.createClass({
       play: !this.state.play,
       pause: !this.state.pause
     })
-  //calls the parent songEntry with the props 'togglePlayer' 
+  //calls the parent songEntry with the props 'togglePlayer'
   //passes in the current state as an argument
     this.props.togglePlayer(this.state.play)
   },
@@ -30,7 +30,7 @@ var Player = React.createClass({
       var displayPause = {
         display: 'none'
       }
-    } 
+    }
   //else is used for when pause is currently at display, so that it could show the pause and hide the play
     else {
       var displayPlay = {
@@ -42,15 +42,17 @@ var Player = React.createClass({
     }
 
     return (
-      <div className='player-container'>
-        <div className='play-pause'>
-          <div className='button-play'>
-            <img src='assets/img/button-play.png' width='50' height='50' ref='play' onClick={this.playShouldpause} style={displayPlay}/>
+      <div className='wrapper'>
+        <div className='player-container'>
+          <div className='play-pause'>
+            <div className='button-play'>
+              <img src='assets/img/button-play.png' width='50' height='50' ref='play' onClick={this.playShouldpause} style={displayPlay}/>
+              </div>
+              <div className='button-pause' >
+              <img src='assets/img/button-pause.png' width='50' height='50' ref='pause' onClick={this.playShouldpause} style={displayPause}/>
+              </div>
+            </div>
           </div>
-          <div className='button-pause' >
-            <img src='assets/img/button-pause.png' width='50' height='50' ref='pause' onClick={this.playShouldpause} style={displayPause}/>
-          </div>
-        </div>
       </div>
       )
     }
